@@ -1,0 +1,30 @@
+<div class="container">
+  <h4 class="text-center my-3">Angular Ngrx</h4>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control mb-2"
+          name="name"
+          placeholder="Tutorial name"
+          #name
+        />
+        <input
+          type="text"
+          class="form-control mb-2"
+          name="url"
+          placeholder="Tutorial URL"
+          #url
+        />
+
+        <button
+          class="btn btn-block btn-success"
+          (click)="addTutorial(name.value, url.value)"
+        >
+          Add Tutorial
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

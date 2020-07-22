@@ -1,0 +1,31 @@
+<div class="container mt-4" *ngIf="tutorials">
+  <div class="card">
+    <div class="card-header">
+      <h5>Saved Tutorials</h5>
+    </div>
+    <div class="card-body">
+      <ul>
+        <!-- Map through tutorials and display them -->
+        <li
+          class="list-item mb-2"
+          *ngFor="let tutorial of tutorials | async; let i = index"
+        >
+          <div class="row">
+            <div class="col-8">
+              <a [href]="tutorial.url">{{ tutorial.name }}</a>
+            </div>
+            <div class="col-1">
+              <!-- Delete btn - pass in index of tutorial -->
+              <button
+                (click)="deleteTutorial(i)"
+                class="btn btn-danger pull-right ml-4"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
